@@ -4,6 +4,14 @@ Name: Jonas J. Solsvik
 Studentno: 473193
 Track: 16HBPROGA
 
+Name: Kent
+Studentno: ??
+Track: 16HBPROGA
+
+Name: Eldar
+Studentno: ??
+Track: 16HBPROGA
+
 ### Task a) 
 
 *Text: Study the application very well, and try to understand its architecture (components and relationships) and its behaviour. Use suitaable diagrams to model the application (not Data Flow Diagram).*
