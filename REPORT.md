@@ -8,6 +8,75 @@ Track: 16HBPROGA
 
 *Text: Study the application very well, and try to understand its architecture (components and relationships) and its behaviour. Use suitaable diagrams to model the application (not Data Flow Diagram).*
 
+I am studying the following github repository:
+
+```http
+https://github.com/NetEase/pomelo
+```
+
+Getting overview of the complexity of the codebase by using the tool CLOC to count lines of code:
+
+```sh
+PS C:\Users\Bruker\github\NetEase\pomelo> cloc .
+     146 text files.
+     142 unique files.
+Complex regular subexpression recursion limit (32766) exceeded at script/cloc-1.72.pl line 9262.
+      96 files ignored.
+
+github.com/AlDanial/cloc v 1.72  T=2.00 s (63.5 files/s, 8153.0 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+JavaScript                     104           1998           2346          10786
+Markdown                         2            140              0            539
+JSON                            15              9              0            340
+CSS                              1             11              0             65
+HTML                             1              0              0             57
+Bourne Shell                     2              0              0              6
+YAML                             1              0              0              5
+DOS Batch                        1              0              0              4
+-------------------------------------------------------------------------------
+SUM:                           127           2158           2346          11802
+-------------------------------------------------------------------------------
+```
+
+```sh
+PS C:\Users\Bruker\github\NetEase\pomelo> cloc lib/
+      71 text files.
+      71 unique files.
+      22 files ignored.
+
+github.com/AlDanial/cloc v 1.72  T=0.50 s (142.0 files/s, 19522.0 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+JavaScript                      71           1155           1975           6631
+-------------------------------------------------------------------------------
+SUM:                            71           1155           1975           6631
+-------------------------------------------------------------------------------
+```
+
+```sh
+PS C:\Users\Bruker\github\NetEase\pomelo> cloc test/
+      26 text files.
+      26 unique files.
+      33 files ignored.
+
+github.com/AlDanial/cloc v 1.72  T=0.50 s (52.0 files/s, 6228.0 lines/s)
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+JavaScript                      23            457             17           2541
+JSON                             3              3              0             96
+-------------------------------------------------------------------------------
+SUM:                            26            460             17           2637
+-------------------------------------------------------------------------------
+```
+
+
+
+
+
 ### Task b)
 
 *Text: Based on the understanding of the system, develop a use case and abuse diagram that has at least two actors and five use cases and four abuse cases.*
