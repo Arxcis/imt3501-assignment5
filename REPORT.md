@@ -6,13 +6,13 @@
 | ---------------- | ----------- | ----------------- |
 | Jonas J. Solsvik | 473193      | 16HBPROGA         |
 | Kent             |             | -------//-------- |
-| Eldar            |             | -------//-------- |
+| Eldar            | 473180      | 16HBPROGA         |
 
 
 
 ### Task a) 
 
-*Text: Study the application very well, and try to understand its architecture (components and relationships) and its behaviour. Use suitaable diagrams to model the application (not Data Flow Diagram).*
+*Text: Study the application very well, and try to understand its architecture (components and relationships) and its behaviour. Use suitable diagrams to model the application (not Data Flow Diagram).*
 
 I am studying the following github repository:
 
