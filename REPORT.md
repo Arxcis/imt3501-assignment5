@@ -2,11 +2,11 @@
 
 ### Contributors
 
-| Name             | Student no. | Track             |
-| ---------------- | ----------- | ----------------- |
-| Jonas J. Solsvik | 473193      | 16HBPROGA         |
-| Kent             |             | -------//-------- |
-| Eldar            | 473180      | 16HBPROGA         |
+| Name              | Student no. | Track             |
+| ----------------- | ----------- | ----------------- |
+| Jonas J. Solsvik  | 473193      | 16HBPROGA         |
+| Kent Wincent Holt | 473209      | 16HBPROGA         |
+| Eldar             | 473180      | 16HBPROGA         |
 
 
 
