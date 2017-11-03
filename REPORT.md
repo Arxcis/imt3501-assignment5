@@ -12,6 +12,8 @@
 
 ### Task a) 
 
+#### Size of code base / complexity
+
 *Text: Study the application very well, and try to understand its architecture (components and relationships) and its behaviour. Use suitable diagrams to model the application (not Data Flow Diagram).*
 
 I am studying the following github repository:
@@ -80,7 +82,18 @@ SUM:                            26            460             17           2637
 ```
 
 
+#### Architecture overview diagram
 
+
+#### Trust boundaries
+
+**Client <---> Game-server**
+
+**Admin-tool(cli/web) <---> Game server**
+
+**Log/config <---> Game server**
+
+**Persistent data storage <---> Game server**
 
 
 ### Task b)
