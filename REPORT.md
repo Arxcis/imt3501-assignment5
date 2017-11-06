@@ -3,11 +3,11 @@
 
 ## Contributors
 
-| Name              | Student no. | Track             |
-| ----------------- | ----------- | ----------------- |
-| Jonas J. Solsvik  | 473193      | 16HBPROGA         |
-| Kent Wincent Holt | 473209      | 16HBPROGA         |
-| Eldar             | 473180      | 16HBPROGA         |
+| Name              | Student no. | Track     |
+| ----------------- | ----------- | --------- |
+| Jonas J. Solsvik  | 473193      | 16HBPROGA |
+| Kent Wincent Holt | 473209      | 16HBPROGA |
+| Eldar             | 473180      | 16HBPROGA |
 
 
 <br>
@@ -18,14 +18,14 @@
     + [Size of Code base](#size-of-codebase)
     + [Architecture Overview](#architecture-overview)
     + [Trust boundaries](#trust-boundaries)
-    
+
 - [task b)](#task-b)
     + [Abuse case diagram](#abuse-case-diagram)
     + [Use Actors](#use-actors)
     + [Use Cases](#use-cases)
     + [Abuse Actors](#abuse-actors)
     + [Abuse Cases](#abuse-cases)
-    
+
 - [task c)](#task-c)
 
 - [References](#references)
@@ -112,22 +112,27 @@ The goals of Pomolo is to provide a fast, scalable, easy to use and powerfull fr
 The application is used to define servers, behaviour and communication. Servers must be part of frontend, backend or master. The frontend works as a router, for the client trafic, to the backend where the main logic is. Communication between the servers is done via **R**ermote **P**rocessing **C**alls.
 Pomolo atempts to be as generall as possible, allowing it to be used for as much as possible. Pomolo is intended to be used with additional tools and plugins. 
 
-Potential entrypoints:
-|ID    | Name     | Description                                                              | Trustlevel     |
-|------|----------|--------------------------------------------------------------------------|----------------|
-|1     |   HTTPS  | The main access method for all users. <br> Accessed by for the sake of playing the game, or managing application|(1) Anonymous Web User <br>(2) User with Valid Login Credentials <br> (3) User with Invalid Login Credentials <br> (4) Administrator|
-|1.1|Application| Access point for playing the game |(2)  User with Valid Login Credentials <br> (4) Administrator|
-|1.2|tcp/udp <br> Port:3005|Default port for connecting to Pomolo-cli|(1) Anonymous Web User <br> (2) User with Valid Login Credentials <br> (3) User with Invalid Login Credentials <br> (4) Administrator|
-|1.2.1|Pomolo-cli|Administrator commandline interface | (4) Administrator |
+![overview](./image/Overview.png)
+
+
+
+**Potential entrypoints:**
+
+| **ID** | Name                   | Description                              | Trustlevel                               |
+| ------ | ---------------------- | ---------------------------------------- | ---------------------------------------- |
+| 1      | HTTPS                  | The main access method for all users. <br> Accessed by for the sake of playing the game, or managing application | (1) Anonymous Web User <br>(2) User with Valid Login Credentials <br> (3) User with Invalid Login Credentials <br> (4) Administrator |
+| 1.1    | Application            | Access point for playing the game        | (2)  User with Valid Login Credentials <br> (4) Administrator |
+| 1.2    | tcp/udp <br> Port:3005 | Default port for connecting to Pomolo-cli | (1) Anonymous Web User <br> (2) User with Valid Login Credentials <br> (3) User with Invalid Login Credentials <br> (4) Administrator |
+| 1.2.1  | Pomolo-cli             | Administrator commandline interface      | (4) Administrator                        |
 
 Assets:
-|ID    | Name     | Description                                                              | Trustlevel     |
-|------|----------|--------------------------------------------------------------------------|----------------|
-|1     |User credentiales| User login details and personal information                       |(3) User with Invalid Login Credentials <br> (4) Administrator|
-|2|Admin credentiales| Admin login details and personal information |(4) Administrator|
-|3|Accessebility | The uptime of the game servers | (4) Administrator |
-|4|Response time | How quickly the game responds touser input | (4) Administrator |
-|5|Configuration files| Contains environment variables that control data flow | (4) Administrator |
+| ID   | Name                | Description                              | Trustlevel                               |
+| ---- | ------------------- | ---------------------------------------- | ---------------------------------------- |
+| 1    | User credentiales   | User login details and personal information | (3) User with Invalid Login Credentials <br> (4) Administrator |
+| 2    | Admin credentiales  | Admin login details and personal information | (4) Administrator                        |
+| 3    | Accessebility       | The uptime of the game servers           | (4) Administrator                        |
+| 4    | Response time       | How quickly the game responds touser input | (4) Administrator                        |
+| 5    | Configuration files | Contains environment variables that control data flow | (4) Administrator                        |
 
 <a href="#trust-boundaries"></a>
 ### Trust boundaries
@@ -156,6 +161,9 @@ The request that comes in to the connector is validated in-part by a uuid connec
 
 <a href="#use-case-diagram"></a>
 ### Use case diagram
+
+![use case diagram](image/Use_Abuse_cases.png)
+
 <br>
 
 <a href="#use-actors"></a>
@@ -192,7 +200,7 @@ __3. Manage the server cluster from a master server__
 __4. Read/Configure logs of server events__
 *Actor: Sysdmin*
 - Log events from servers.
-[wiki/Log-Managment](https://github.com/NetEase/pomelo/wiki/Log-Management)
+  [wiki/Log-Managment](https://github.com/NetEase/pomelo/wiki/Log-Management)
 
 __5. Configure Remote Process Calls(RPC's) between servers__
 *Actor: Server developer*
@@ -242,16 +250,31 @@ __4. Server broadcast Area of Interest manipulation__
 *Actor: player* 
 - In cases where the server will broadcast information to clients using an Area of Interest policy. If this area of interest system can be tampered with, a player may gain a competetive advantege by increasing it's Area of Interest, and decreasing other players Area of Interest.
 
+  ​
+
+
+![Attack tree](image/attackTree.png)
 
 <br>
 
 <a href="#task-c"></a>
 ## Task c) 
 
-*Text: Follow the STRIDE methodology we discussed in the lecture to perform threat modeling:
+*Text: Follow the STRIDE methodology we discussed in the lecture to perform threat modeling:*
 
-**CHECK** - Identify trust domains, the trust boundaries and the attack surface.
-**CHECK** - Create a DFD diagram that represent of the application.
+- Identify trust domains, the trust boundaries and the attack surface.
+
+* Create a DFD diagram that represent of the application.
+
+  ​
+
+  **DFD diagram**
+
+![DFD diagram](image/DFD_Diagram.png)
+
+
+
+**Threat table**
 
 
 - Identify the threat types to each element.
@@ -260,18 +283,18 @@ __4. Server broadcast Area of Interest manipulation__
 
 
 
-| No. | Threat Description                | Threat type (OWASP - ASF categorization)  | Mitigation strategy                                                         |
-| --- | ---------------------------------              | ----------------------------------------- | ---------------------------------------------------------                   | 
-|  1  | Session Hijacking  (data flow)                 | User and Session Management               | Input validation, escape special characters and key words                   |
-|  2  | Monitoring information disclosure (data flow)  | Auditing and Logging         | No stored sensitive information and encryption                              |
-|  3  | Log injection/removal (data store)             | Data Protection in Storage and Transit    | Input validation, escape special characters and key words                   |
-|  4  | Log information disclosure (data store)        | Auditing and Logging                | Information Disclosure | Never log/store sensitiv information / enctryption |
-|  5  | Error message discolsure of server state.(processes)           | Error Handling and Exception Management |  Fail safely, Check if things go right, otherwise do not allow access to resources. |
-|  6  | Weak cryptographic encryption used. (e.g md5/sha 1) (processes)| Data Protection in Storage and Transit|                        Use strong encryption e.g sha256, open source, validatied, verified                            |
-|  7  | Unauthorized user changes server configuration (processes)     | Configuration Management              |  Restrict configuration to administrators, log privileged actions|
-|  8  | Incorrect implemented input validation. (Processes)            | Data Validation / Parameter Validation                                      |    Range checks, formal definition of whitelisted input, type checks.                                                |
-|  9  | Client sends large amount of requests (external entity)| Authentication | Identify normal traffic and use it for whitlisting clients. Input validation.|
-| 10  | Kicked Employee "rm -rf /"-directory (external entity)| Authorization                                 |  non-repudiation, backup, principle of least privileged access                                                 |
+| No.  | Threat Description                       | Threat type (OWASP - ASF categorization) | Mitigation strategy                      |
+| ---- | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
+| 1    | Session Hijacking  (data flow)           | User and Session Management              | Input validation, escape special characters and key words |
+| 2    | Monitoring information disclosure (data flow) | Auditing and Logging                     | No stored sensitive information and encryption |
+| 3    | Log injection/removal (data store)       | Data Protection in Storage and Transit   | Input validation, escape special characters and key words |
+| 4    | Log information disclosure (data store)  | Auditing and Logging                     | Information Disclosure                   |
+| 5    | Error message discolsure of server state.(processes) | Error Handling and Exception Management  | Fail safely, Check if things go right, otherwise do not allow access to resources. |
+| 6    | Weak cryptographic encryption used. (e.g md5/sha 1) (processes) | Data Protection in Storage and Transit   | Use strong encryption e.g sha256, open source, validatied, verified |
+| 7    | Unauthorized user changes server configuration (processes) | Configuration Management                 | Restrict configuration to administrators, log privileged actions |
+| 8    | Incorrect implemented input validation. (Processes) | Data Validation / Parameter Validation   | Range checks, formal definition of whitelisted input, type checks. |
+| 9    | Client sends large amount of requests (external entity) | Authentication                           | Identify normal traffic and use it for whitlisting clients. Input validation. |
+| 10   | Kicked Employee "rm -rf /"-directory (external entity) | Authorization                            | non-repudiation, backup, principle of least privileged access |
 
 [OWASP ASF threat types](https://www.owasp.org/index.php/Application_Threat_Modeling)
 
