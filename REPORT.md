@@ -27,7 +27,6 @@
     + [Abuse Cases](#abuse-cases)
     
 - [task c)](#task-c)
-    + [S T R I D E](#stride)
 
 - [References](#references)
 
